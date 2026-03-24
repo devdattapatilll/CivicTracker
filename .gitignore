@@ -1,0 +1,23 @@
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+.vscode/
+*.log
+
+# Training artifacts (large, regeneratable)
+datasets/
+runs/
+civictrack_training/
+yolov8n.pt
+yolov12s.pt
+
+# Temp test files
+test_output.txt
+test_results.txt
+test_backend.py
+
+# Duplicate files
+app (1).py
+index (1).html
