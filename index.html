@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CivicTrack - AI-Powered Community Issue Tracker</title>
+  <title>CivicTrack — AI-Powered Community Issue Tracker</title>
   <meta name="description" content="CivicTrack is an AI-powered community platform to report civic issues like potholes, garbage, waterlogging, and road cracks. Track progress and help your neighbourhood." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -13,186 +13,288 @@
 </head>
 <body>
 
-<!-- ======================= HEADER ======================= -->
-<header class="header">
-  <div class="header-container">
-    <div class="logo">
-      <div class="logo-icon">📍</div>
-      <div class="logo-text">
-        <h1>CivicTrack</h1>
-        <p>Community Issue Tracker</p>
-      </div>
+<!-- ======================= SIDEBAR NAVIGATION ======================= -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span class="sidebar-title">CivicTrack</span>
     </div>
-    <!-- Mobile hamburger -->
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="nav" id="mainNav">
-      <button class="nav-btn" data-target="hero">Home</button>
-      <button class="nav-btn" data-target="how-it-works">How It Works</button>
-      <button class="nav-btn" data-target="issues-section">Issues</button>
-      <button class="nav-btn" data-target="report-section">Report</button>
-      <button class="nav-btn" data-target="help-board-section">Help Board</button>
-      <button class="btn-signin" id="signinBtn">Sign In</button>
-    </nav>
   </div>
+  <nav class="sidebar-nav">
+    <button class="sidebar-link active" data-page="home" id="nav-home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="sidebar-link" data-page="report" id="nav-report">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      <span>Report Issue</span>
+    </button>
+    <button class="sidebar-link" data-page="how-it-works" id="nav-how">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <span>How It Works</span>
+    </button>
+    <button class="sidebar-link" data-page="team" id="nav-team">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span>Team</span>
+    </button>
+  </nav>
+  <div class="sidebar-footer">
+    <div id="sidebar-user"></div>
+    <button class="sidebar-link sidebar-signin" id="sidebarSigninBtn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      <span>Sign In</span>
+    </button>
+  </div>
+</aside>
+
+<!-- Mobile top bar -->
+<header class="mobile-header" id="mobileHeader">
+  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="mobile-title">CivicTrack</span>
 </header>
 
-<div class="container">
+<!-- ======================= MAIN CONTENT ======================= -->
+<main class="main-content" id="mainContent">
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <h2>Report. Track. <span class="gradient-text">Resolve.</span></h2>
-    <p>A smart community-driven platform to report civic issues — potholes, garbage, waterlogging, road cracks, and more. AI automatically detects and categorises your complaint.</p>
-    <div class="hero-badges">
-      <span class="hero-badge">🤖 AI-Powered Detection</span>
-      <span class="hero-badge">📍 GPS Location</span>
-      <span class="hero-badge">📊 Real-time Tracking</span>
-      <span class="hero-badge">💰 100% Free</span>
+  <!-- ====== PAGE: HOME ====== -->
+  <section class="page active" id="page-home">
+    <div class="page-header">
+      <h2>Dashboard</h2>
+      <p class="page-subtitle">Overview of civic issues reported in your community</p>
     </div>
+    <div id="stats-root"></div>
+    <div id="categories-title" style="margin-top:2rem;"></div>
+    <!-- React mounts issue cards here -->
   </section>
 
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="how-it-works">
-    <h3 class="section-title">How It Works</h3>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-icon">📸</div>
-        <h4>Report an Issue</h4>
-        <p>Take a photo, describe the problem, and pin your GPS location. It takes less than a minute.</p>
+  <!-- ====== PAGE: REPORT ISSUE ====== -->
+  <section class="page" id="page-report">
+    <div class="page-header">
+      <h2>Report an Issue</h2>
+      <p class="page-subtitle">Describe the civic issue and our AI will automatically categorize it</p>
+    </div>
+
+    <form class="report-form" id="reportForm" autocomplete="off">
+
+      <!-- Title -->
+      <div class="form-group">
+        <label class="form-label">Issue Title <span class="required">*</span></label>
+        <input id="f_title" name="title" type="text" class="form-input"
+               placeholder="e.g. Large pothole near market road" required minlength="5">
       </div>
-      <div class="step-arrow">→</div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-icon">🤖</div>
-        <h4>AI Analyses</h4>
-        <p>YOLOv12 vision model detects issues in your image. NLP classifier auto-categorises the complaint.</p>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label class="form-label">Description <span class="required">*</span></label>
+        <textarea id="f_desc" name="description" class="form-textarea" required minlength="20"
+                  placeholder="Describe the issue in detail — location, severity, how long it has been present..."></textarea>
       </div>
-      <div class="step-arrow">→</div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-icon">✅</div>
-        <h4>Track & Resolve</h4>
-        <p>Authorities can view, assign, and update issue status. Citizens track progress in real-time.</p>
-      </div>
-    </div>
-  </section>
 
-  <!-- React stats + category filter + issues grid -->
-  <div id="stats-root"></div>
-  <h3 class="section-title" id="categories-title">Categories</h3>
-
-  <!-- ======================= REPORT FORM ======================= -->
-  <h3 class="section-title" id="report-section" style="margin-top:4rem;">Report an Issue</h3>
-
-  <form class="report-form" id="reportForm" autocomplete="off">
-
-    <!-- Title -->
-    <div class="form-group">
-      <label class="form-label">Issue Title *</label>
-      <input id="f_title" name="title" type="text" class="form-input"
-             placeholder="e.g. Large pothole near market road" required minlength="5">
-    </div>
-
-    <!-- Description -->
-    <div class="form-group">
-      <label class="form-label">Description *</label>
-      <textarea id="f_desc" name="description" class="form-textarea" required minlength="20"
-                placeholder="Describe the issue in detail — location, severity, how long it's been present..."></textarea>
-    </div>
-
-    <!-- Category (auto-filled by AI) -->
-    <div class="form-group">
-      <label class="form-label">Category</label>
-      <div id="aiSuggestionBox" class="ai-suggestion-box" style="display:none;">
-        <span class="ai-icon">🤖</span>
-        <span>AI suggests: <strong id="aiCategoryText"></strong>
-          (<span id="aiConfText"></span>)</span>
-        <button type="button" id="applyAiBtn" class="apply-ai-btn">Apply ↓</button>
-      </div>
-      <select id="f_category" name="category" class="form-select">
-        <option value="Roads">🛣️  Roads (Potholes)</option>
-        <option value="Garbage">🗑️  Garbage</option>
-        <option value="Water Leakage">💧  Water Leakage / Flooding</option>
-        <option value="Road Cracks">🔧  Road Cracks</option>
-        <option value="Electricity">⚡  Electricity</option>
-        <option value="Other">📋  Other</option>
-      </select>
-    </div>
-
-    <!-- Location -->
-    <div class="form-group">
-      <label class="form-label">Location *</label>
-      <input id="locationInput" name="location" type="text" class="form-input"
-             placeholder="Search location or use GPS..." required>
-      <div id="suggestions" class="suggestions-box"></div>
-      <button type="button" id="gpsBtn" class="gps-btn">📡 Use my GPS location</button>
-    </div>
-
-    <!-- Image Upload -->
-    <div class="form-group">
-      <label class="form-label">Upload Image
-        <span style="font-weight:400; color:var(--sage-500); font-size:0.85rem;">(optional — AI analyses the image)</span>
-      </label>
-      <div class="upload-zone" id="uploadZone">
-        <input type="file" id="imageFileInput" accept="image/*" style="display:none">
-        <div id="uploadPromptText" class="upload-prompt">
-          <div style="font-size:2.5rem; margin-bottom:0.5rem;">📷</div>
-          <div style="font-weight:600;">Click or drag &amp; drop</div>
-          <div class="upload-hint">JPG, PNG, WEBP · max 5 MB</div>
+      <!-- Category -->
+      <div class="form-group">
+        <label class="form-label">Category</label>
+        <div id="aiSuggestionBox" class="ai-suggestion-box" style="display:none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span>AI suggests: <strong id="aiCategoryText"></strong>
+            (<span id="aiConfText"></span>)</span>
+          <button type="button" id="applyAiBtn" class="apply-ai-btn">Apply</button>
         </div>
-        <img id="imagePreview" alt="Preview" style="display:none;">
-        <button type="button" id="removeImageBtn" class="remove-img-btn" style="display:none;">✕ Remove</button>
+        <select id="f_category" name="category" class="form-select">
+          <option value="Roads">Roads (Potholes)</option>
+          <option value="Garbage">Garbage</option>
+          <option value="Water Leakage">Water Leakage / Flooding</option>
+          <option value="Road Cracks">Road Cracks</option>
+          <option value="Electricity">Electricity</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
-      <div id="detectionResult" class="detection-badge" style="display:none;"></div>
-    </div>
 
-    <!-- Submit -->
-    <button class="btn-submit" id="submitBtn" type="submit">
-      <span id="submitBtnText">Submit Issue</span>
-    </button>
+      <!-- Location -->
+      <div class="form-group">
+        <label class="form-label">Location <span class="required">*</span></label>
+        <input id="locationInput" name="location" type="text" class="form-input"
+               placeholder="Search location or use GPS..." required>
+        <div id="suggestions" class="suggestions-box"></div>
+        <button type="button" id="gpsBtn" class="gps-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
+          Use GPS location
+        </button>
+      </div>
 
-  </form>
+      <!-- Image Upload -->
+      <div class="form-group">
+        <label class="form-label">Upload Image
+          <span class="form-hint">(optional — AI will analyze the image)</span>
+        </label>
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="imageFileInput" accept="image/*" style="display:none">
+          <div id="uploadPromptText" class="upload-prompt">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <div class="upload-text">Click or drag and drop</div>
+            <div class="upload-hint">JPG, PNG, WEBP — max 5 MB</div>
+          </div>
+          <img id="imagePreview" alt="Preview" style="display:none;">
+          <button type="button" id="removeImageBtn" class="remove-img-btn" style="display:none;">Remove</button>
+        </div>
+        <div id="detectionResult" class="detection-badge" style="display:none;"></div>
+      </div>
 
-  <!-- ======================= COMMUNITY HELP BOARD ======================= -->
-  <section id="help-board-section" style="margin-top:5rem;">
-    <h3 class="section-title">🤝 Community Help Board</h3>
-    <p style="color:var(--sage-600); margin-bottom:2rem; max-width:600px;">Post urgent community needs — blood donation requests, lost items, tutoring offers, or anything your neighbours can help with.</p>
+      <!-- Status message for ML service -->
+      <div id="mlStatusMsg" class="ml-status-msg" style="display:none;"></div>
 
-    <div id="helpboard-root"></div>
+      <!-- Submit -->
+      <button class="btn-submit" id="submitBtn" type="submit">
+        <span id="submitBtnText">Submit Issue</span>
+      </button>
+
+    </form>
   </section>
 
-</div><!-- /container -->
+  <!-- ====== PAGE: HOW IT WORKS ====== -->
+  <section class="page" id="page-how-it-works">
+    <div class="page-header">
+      <h2>How It Works</h2>
+      <p class="page-subtitle">CivicTrack uses machine learning to automatically detect and classify civic infrastructure issues</p>
+    </div>
 
-<!-- ======================= TEAM SECTION ======================= -->
-<section class="team-section">
-  <h3 class="section-title">Our Team</h3>
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="team-photo"><div class="team-photo-placeholder">SS</div></div>
-      <h4 class="team-name">Sarthak Sant</h4>
-      <p class="team-role">Backend Developer + UI/UX Design</p>
+    <div class="how-section">
+      <h3>Workflow</h3>
+      <div class="workflow-steps">
+        <div class="workflow-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h4>Report</h4>
+            <p>Capture a photo of the issue, describe the problem, and pin your GPS location. The entire process takes under a minute.</p>
+          </div>
+        </div>
+        <div class="workflow-connector"></div>
+        <div class="workflow-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h4>AI Analysis</h4>
+            <p>YOLOv12 object detection models scan the uploaded image for potholes, garbage, waterlogging, or road cracks. A separate NLP classifier categorizes the text description.</p>
+          </div>
+        </div>
+        <div class="workflow-connector"></div>
+        <div class="workflow-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h4>Track and Resolve</h4>
+            <p>Issues are stored in the database with real-time status tracking. Administrators can update issue status from Pending to In Progress to Resolved.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="team-card">
-      <div class="team-photo"><div class="team-photo-placeholder">MR</div></div>
-      <h4 class="team-name">Mayank Rawat</h4>
-      <p class="team-role">Authentication &amp; Admin Module</p>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><div class="team-photo-placeholder">RP</div></div>
-      <h4 class="team-name">Rizul Pathania</h4>
-      <p class="team-role">Frontend Developer</p>
-    </div>
-    <div class="team-card">
-      <div class="team-photo"><div class="team-photo-placeholder">DP</div></div>
-      <h4 class="team-name">Devdatta Patil</h4>
-      <p class="team-role">ML Models &amp; Deployment</p>
-    </div>
-  </div>
-</section>
 
-<footer class="footer">© 2025–2026 CivicTrack — AI-Augmented Civic Reporting Platform · Capstone Project</footer>
+    <div class="how-section">
+      <h3>System Architecture</h3>
+      <div class="architecture-grid">
+        <div class="arch-card">
+          <div class="arch-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h4>Frontend</h4>
+          <p class="arch-tech">Vercel (Static Hosting)</p>
+          <ul class="arch-list">
+            <li>HTML5 + CSS3 single-page application</li>
+            <li>React 18 for dynamic components</li>
+            <li>Firebase SDK for auth and database</li>
+            <li>Responsive sidebar navigation</li>
+          </ul>
+        </div>
+        <div class="arch-card">
+          <div class="arch-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          </div>
+          <h4>ML Backend</h4>
+          <p class="arch-tech">Render (Python / Flask)</p>
+          <ul class="arch-list">
+            <li>4 YOLO object detection models</li>
+            <li>TF-IDF + LinearSVC text classifier</li>
+            <li>REST API with 6 endpoints</li>
+            <li>Gunicorn production server</li>
+          </ul>
+        </div>
+        <div class="arch-card">
+          <div class="arch-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
+          <h4>Database</h4>
+          <p class="arch-tech">Firebase (Google Cloud)</p>
+          <ul class="arch-list">
+            <li>Authentication (Google + Email)</li>
+            <li>Firestore NoSQL document store</li>
+            <li>Cloud Storage for uploaded images</li>
+            <li>Real-time data synchronization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="how-section">
+      <h3>AI Models</h3>
+      <div class="models-table-wrap">
+        <table class="models-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Architecture</th>
+              <th>Purpose</th>
+              <th>Input</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>pothole.pt</td><td>YOLOv12s</td><td>Pothole and road damage detection</td><td>Image</td></tr>
+            <tr><td>garbage.pt</td><td>YOLOv8n</td><td>Waste and overflowing bin detection</td><td>Image</td></tr>
+            <tr><td>waterlog.pt</td><td>YOLOv8n</td><td>Flood and waterlogging detection</td><td>Image</td></tr>
+            <tr><td>crack.pt</td><td>YOLOv8n</td><td>Road crack and surface damage detection</td><td>Image</td></tr>
+            <tr><td>classifier.pkl</td><td>TF-IDF + LinearSVC</td><td>Text classification into 5 categories</td><td>Text</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== PAGE: TEAM ====== -->
+  <section class="page" id="page-team">
+    <div class="page-header">
+      <h2>Team</h2>
+      <p class="page-subtitle">Meet the people behind CivicTrack</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar"><span>SS</span></div>
+        <h4>Sarthak Sant</h4>
+        <p class="team-role">Backend Developer, UI/UX Design</p>
+        <p class="team-desc">Flask API development, design system architecture, and interface design.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><span>MR</span></div>
+        <h4>Mayank Rawat</h4>
+        <p class="team-role">Authentication and Admin Module</p>
+        <p class="team-desc">Firebase Authentication integration, admin panel functionality, and access control.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><span>RP</span></div>
+        <h4>Rizul Pathania</h4>
+        <p class="team-role">Frontend Developer</p>
+        <p class="team-desc">React components, responsive layouts, and cross-browser compatibility.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><span>DP</span></div>
+        <h4>Devdatta Patil</h4>
+        <p class="team-role">ML Models and Deployment</p>
+        <p class="team-desc">YOLO model training, NLP classifier development, and cloud deployment on Render and Vercel.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">&copy; 2025&ndash;2026 CivicTrack &mdash; AI-Augmented Civic Reporting Platform &middot; Capstone Project</footer>
 
 <!-- ============================================================
      FIREBASE MODULE
@@ -224,7 +326,6 @@
   const db      = getFirestore(app);
   const storage = getStorage(app);
 
-  // ── Stats helper ─────────────────────────────────────────────
   function computeStats(arr) {
     const s = { total: arr.length, pending: 0, progress: 0, resolved: 0 };
     arr.forEach(i => {
@@ -236,7 +337,6 @@
     return s;
   }
 
-  // ── Firebase Storage upload ───────────────────────────────────
   async function uploadImageToStorage(file) {
     if (!file) return null;
     const path     = `issues/${Date.now()}_${file.name.replace(/\s+/g, "_")}`;
@@ -245,7 +345,6 @@
     return getDownloadURL(snapshot.ref);
   }
 
-  // ── Expose helpers to window ──────────────────────────────────
   window.firebaseHelpers = {
     addIssue: async (data) => {
       const ref = await addDoc(collection(db, "issues"), {
@@ -257,9 +356,7 @@
       });
       return ref.id;
     },
-
     uploadImage: uploadImageToStorage,
-
     subscribeIssues: (cb) => {
       const q = query(collection(db, "issues"), orderBy("createdAt", "desc"));
       return onSnapshot(q, snap => {
@@ -271,33 +368,7 @@
         cb(arr, computeStats(arr));
       }, err => console.error("subscribeIssues:", err));
     },
-
     updateIssueStatus: async (id, status) => updateDoc(doc(db, "issues", id), { status }),
-
-    // ── Help Board helpers ────────────────────────────────────
-    addHelpRequest: async (data) => {
-      const ref = await addDoc(collection(db, "helpRequests"), {
-        ...data,
-        status:    "Open",
-        createdAt: serverTimestamp()
-      });
-      return ref.id;
-    },
-
-    subscribeHelpRequests: (cb) => {
-      const q = query(collection(db, "helpRequests"), orderBy("createdAt", "desc"));
-      return onSnapshot(q, snap => {
-        const arr = snap.docs.map(d => {
-          const data = d.data();
-          return { id: d.id, ...data,
-            createdAt: data.createdAt?.toDate ? data.createdAt.toDate() : null };
-        });
-        cb(arr);
-      }, err => console.error("subscribeHelpRequests:", err));
-    },
-
-    updateHelpStatus: async (id, status) => updateDoc(doc(db, "helpRequests", id), { status }),
-
     signInWithGoogle: () => signInWithPopup(auth, new GoogleAuthProvider()),
     signOut:          () => fbSignOut(auth),
     signInWithEmail:  (e, p) => signInWithEmailAndPassword(auth, e, p),
@@ -305,38 +376,28 @@
     onAuthStateChanged: cb => fbOnAuthChanged(auth, cb),
     _auth: auth, _db: db
   };
-
   console.log("[Firebase] helpers ready");
 </script>
 
 <!-- ============================================================
-     REACT APP (stats + categories + issues + help board)
+     REACT APP (Stats + Issues on Home page)
      ============================================================ -->
 <script type="text/babel">
   const CATS_DEFAULT  = ["All","Roads","Garbage","Water Leakage","Road Cracks","Electricity","Other"];
   const ADMIN_EMAILS  = ["sarthaksant2004@gmail.com"];
 
-  const CAT_ICONS = {
-    "All": "🌐", "Roads": "🛣️", "Garbage": "🗑️",
-    "Water Leakage": "💧", "Road Cracks": "🔧",
-    "Electricity": "⚡", "Other": "📋"
-  };
-
-  const HELP_TYPES = ["🩸 Blood Donation", "🐾 Lost Pet", "📚 Tutoring", "🆘 Emergency", "📦 Other"];
-
-  // ── Stats ──────────────────────────────────────────────────
   function Stats({ stats }) {
+    const items = [
+      ["Total Issues", stats?.total||0, "total"],
+      ["Pending",      stats?.pending||0, "pending"],
+      ["In Progress",  stats?.progress||0, "progress"],
+      ["Resolved",     stats?.resolved||0, "resolved"]
+    ];
     return (
       <div className="stats-grid">
-        {[["📌","Total Issues", stats?.total||0],
-          ["⏳","Pending",      stats?.pending||0],
-          ["⚙️","In Progress",  stats?.progress||0],
-          ["✔️","Resolved",     stats?.resolved||0]].map(([icon,label,val]) => (
-          <div key={label} className="stat-card">
-            <div className="stat-card-header">
-              <div className="stat-icon">{icon}</div>
-              <div className="stat-value">{val}</div>
-            </div>
+        {items.map(([label,val,cls]) => (
+          <div key={label} className={`stat-card stat-${cls}`}>
+            <div className="stat-value">{val}</div>
             <div className="stat-label">{label}</div>
           </div>
         ))}
@@ -344,41 +405,24 @@
     );
   }
 
-  // ── Category filter ────────────────────────────────────────
   function CategoryFilter({ cats, active, onChange }) {
     return (
       <div className="categories">
         {cats.map(c => (
           <button key={c} className={`category-btn ${active===c?"active":""}`}
                   onClick={() => onChange(c)}>
-            {CAT_ICONS[c] || "📋"} {c}
+            {c}
           </button>
         ))}
       </div>
     );
   }
 
-  // ── Issue Card ─────────────────────────────────────────────
   function IssueCard({ issue, isAdmin, onUpdate }) {
     const [expanded, setExpanded] = React.useState(false);
-
     const statusClass = issue.status === "Pending"     ? "status-pending"
                       : issue.status === "In Progress" ? "status-progress"
                       : "status-resolved";
-
-    const mlBadge = issue.mlCategory && (
-      <span className="ml-badge">
-        🤖 {issue.mlCategory} {issue.mlConfidence
-          ? `(${Math.round(issue.mlConfidence*100)}%)` : ""}
-      </span>
-    );
-
-    const detectBadge = issue.hasDetection && (
-      <span className="detect-badge">
-        🔍 Detected ({Math.round((issue.detectionConf||0)*100)}%)
-      </span>
-    );
-
     const timeAgo = issue.createdAt ? getTimeAgo(issue.createdAt) : "";
 
     return (
@@ -386,34 +430,32 @@
         <div className="issue-image">
           {issue.image
             ? <img src={issue.image} alt={issue.title} loading="lazy" />
-            : <div style={{height:"100%",display:"flex",alignItems:"center",
-                           justifyContent:"center",color:"#aaa",fontSize:"2rem"}}>📸</div>}
+            : <div className="issue-image-placeholder">No image</div>}
           <span className={`issue-status ${statusClass}`}>{issue.status}</span>
         </div>
         <div className="issue-content">
           <h4 className="issue-title">{issue.title}</h4>
-          <div className="issue-location">📍 {issue.location}</div>
-          {timeAgo && <div className="issue-time">🕐 {timeAgo}</div>}
-          <div style={{display:"flex",gap:"0.4rem",flexWrap:"wrap",margin:"0.5rem 0"}}>
-            {mlBadge}{detectBadge}
+          <div className="issue-meta">
+            <span>{issue.location}</span>
+            {timeAgo && <span>{timeAgo}</span>}
           </div>
+          {issue.mlCategory && (
+            <span className="ml-badge">
+              AI: {issue.mlCategory} {issue.mlConfidence
+                ? `(${Math.round(issue.mlConfidence*100)}%)` : ""}
+            </span>
+          )}
           {expanded && issue.description && (
             <div className="issue-description">{issue.description}</div>
           )}
           <div className="issue-footer">
-            <div className="issue-interactions">
-              <div className="interaction">👍 {issue.upvotes||0}</div>
-              <div className="interaction">💬 {issue.comments||0}</div>
-            </div>
-            <div style={{display:"flex",gap:"0.5rem",alignItems:"center",flexWrap:"wrap"}}>
-              <span className="issue-category-tag">{CAT_ICONS[issue.category] || "📋"} {issue.category}</span>
-              {isAdmin && (
-                <div style={{display:"flex",gap:"0.4rem"}}>
-                  <button className="filter-btn" onClick={(e)=>{e.stopPropagation();onUpdate(issue.id,"In Progress")}}>In Progress</button>
-                  <button className="filter-btn resolve-btn" onClick={(e)=>{e.stopPropagation();onUpdate(issue.id,"Resolved")}}>Resolve</button>
-                </div>
-              )}
-            </div>
+            <span className="issue-category-tag">{issue.category}</span>
+            {isAdmin && (
+              <div className="admin-actions">
+                <button className="btn-small" onClick={(e)=>{e.stopPropagation();onUpdate(issue.id,"In Progress")}}>In Progress</button>
+                <button className="btn-small btn-resolve" onClick={(e)=>{e.stopPropagation();onUpdate(issue.id,"Resolved")}}>Resolve</button>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -429,114 +471,6 @@
     return date.toLocaleDateString();
   }
 
-  // ── Help Board Card ────────────────────────────────────────
-  function HelpCard({ item, isAdmin, onStatusChange }) {
-    const isOpen = item.status === "Open";
-    return (
-      <div className={`help-card ${isOpen ? "" : "help-fulfilled"}`}>
-        <div className="help-type-badge">{item.type || "🆘 General"}</div>
-        <h4 className="help-title">{item.title}</h4>
-        <p className="help-desc">{item.description}</p>
-        {item.contact && <div className="help-contact">📞 {item.contact}</div>}
-        <div className="help-footer">
-          <span className={`help-status ${isOpen?"help-open":"help-closed"}`}>
-            {isOpen ? "🟢 Open" : "✅ Fulfilled"}
-          </span>
-          {isAdmin && isOpen && (
-            <button className="filter-btn" onClick={() => onStatusChange(item.id, "Fulfilled")}>
-              Mark Fulfilled
-            </button>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  // ── Help Board Section ─────────────────────────────────────
-  function HelpBoard() {
-    const [requests, setRequests] = React.useState([]);
-    const [showForm, setShowForm] = React.useState(false);
-    const [formData, setFormData] = React.useState({title:"",description:"",type:HELP_TYPES[0],contact:""});
-    const [isAdmin, setIsAdmin]  = React.useState(false);
-    const [submitting, setSubmitting] = React.useState(false);
-
-    React.useEffect(() => {
-      const unsubAuth = window.firebaseHelpers?.onAuthStateChanged?.(u => {
-        setIsAdmin(u && ADMIN_EMAILS.includes(u.email));
-      });
-      const unsubHelp = window.firebaseHelpers?.subscribeHelpRequests?.(arr => {
-        setRequests(arr);
-      });
-      return () => { unsubAuth?.(); unsubHelp?.(); };
-    }, []);
-
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      if (!formData.title.trim() || !formData.description.trim()) {
-        alert("Please fill in title and description."); return;
-      }
-      setSubmitting(true);
-      try {
-        await window.firebaseHelpers.addHelpRequest(formData);
-        setFormData({title:"",description:"",type:HELP_TYPES[0],contact:""});
-        setShowForm(false);
-        alert("✓ Help request posted!");
-      } catch(err) {
-        alert("Failed: " + err.message);
-      }
-      setSubmitting(false);
-    };
-
-    return (
-      <>
-        <button className="btn-submit" style={{maxWidth:"300px",marginBottom:"2rem"}}
-                onClick={() => setShowForm(!showForm)}>
-          {showForm ? "Cancel" : "➕ Post a Help Request"}
-        </button>
-
-        {showForm && (
-          <form className="report-form help-form" onSubmit={handleSubmit} style={{marginBottom:"2rem"}}>
-            <div className="form-group">
-              <label className="form-label">Type</label>
-              <select className="form-select" value={formData.type}
-                      onChange={e => setFormData({...formData, type: e.target.value})}>
-                {HELP_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
-              </select>
-            </div>
-            <div className="form-group">
-              <label className="form-label">Title *</label>
-              <input className="form-input" placeholder="e.g. Urgent B+ blood needed"
-                     value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} required />
-            </div>
-            <div className="form-group">
-              <label className="form-label">Description *</label>
-              <textarea className="form-textarea" placeholder="Provide details..."
-                        value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} required />
-            </div>
-            <div className="form-group">
-              <label className="form-label">Contact (optional)</label>
-              <input className="form-input" placeholder="Phone or email"
-                     value={formData.contact} onChange={e => setFormData({...formData, contact: e.target.value})} />
-            </div>
-            <button className="btn-submit" type="submit" disabled={submitting}>
-              {submitting ? "Posting..." : "Post Request"}
-            </button>
-          </form>
-        )}
-
-        <div className="help-grid">
-          {requests.length === 0
-            ? <p style={{color:"var(--sage-600)"}}>No help requests yet. Be the first to post!</p>
-            : requests.map(r => (
-                <HelpCard key={r.id} item={r} isAdmin={isAdmin}
-                  onStatusChange={(id,s) => window.firebaseHelpers?.updateHelpStatus?.(id,s)} />
-              ))}
-        </div>
-      </>
-    );
-  }
-
-  // ── Main App ───────────────────────────────────────────────
   function App() {
     const [issues,   setIssues]   = React.useState([]);
     const [stats,    setStats]    = React.useState({total:0,pending:0,progress:0,resolved:0});
@@ -547,9 +481,7 @@
     React.useEffect(() => {
       const unsubAuth = window.firebaseHelpers?.onAuthStateChanged?.(u => {
         setIsAdmin(u && ADMIN_EMAILS.includes(u.email));
-        try { window.updateNavUser?.(u); } catch(_){}
       });
-
       const unsubIssues = window.firebaseHelpers?.subscribeIssues?.((arr, st) => {
         setIssues(arr);
         setStats(st);
@@ -557,7 +489,6 @@
         arr.forEach(i => i.category && cs.add(i.category));
         setCats([...cs]);
       });
-
       return () => { unsubAuth?.(); unsubIssues?.(); };
     }, []);
 
@@ -567,10 +498,10 @@
       <>
         <Stats stats={stats} />
         <CategoryFilter cats={cats} active={activeCat} onChange={setActiveCat} />
-        <h3 className="section-title" style={{marginTop:"3rem"}}>Recent Issues</h3>
+        <h3 className="section-title" style={{marginTop:"2rem"}}>Recent Issues</h3>
         <div id="issues-section" className="issues-grid">
           {filtered.length === 0
-            ? <p style={{color:"var(--sage-600)"}}>No issues found in this category.</p>
+            ? <p className="empty-state">No issues found in this category.</p>
             : filtered.map(i => (
                 <IssueCard key={i.id} issue={i} isAdmin={isAdmin}
                   onUpdate={(id,s) => window.firebaseHelpers?.updateIssueStatus?.(id,s)} />
@@ -580,20 +511,17 @@
     );
   }
 
-  // Mount main app after Categories heading
+  // Mount
   (function mount() {
     const root = document.createElement("div");
     root.id = "civictrack-app-root";
-    const after = document.getElementById("categories-title");
-    after?.parentNode?.insertBefore(root, after.nextSibling)
-      || document.getElementById("stats-root")?.replaceWith(root);
+    const target = document.getElementById("categories-title");
+    if (target) target.replaceWith(root);
+    else {
+      const statsRoot = document.getElementById("stats-root");
+      if (statsRoot) statsRoot.replaceWith(root);
+    }
     ReactDOM.createRoot(root).render(<App />);
-  })();
-
-  // Mount help board
-  (function mountHelp() {
-    const el = document.getElementById("helpboard-root");
-    if (el) ReactDOM.createRoot(el).render(<HelpBoard />);
   })();
 </script>
 
@@ -601,16 +529,16 @@
      ML SERVICE INTEGRATION + FORM LOGIC
      ============================================================ -->
 <script>
-// ── Config: update after deploying to Render ───────────────────────────────
-const ML_SERVICE_URL = "https://civictrack-ml.onrender.com";   // Render deployment
+// -- Config -------------------------------------------------------------------------
+const ML_SERVICE_URL = "https://civictrack-ml.onrender.com";
 
-// ── State ──────────────────────────────────────────────────────────────────
+// -- State --------------------------------------------------------------------------
 let selectedFile       = null;
 let aiSuggestedCat     = null;
 let aiSuggestedConf    = 0;
 let detectionResult    = null;
 
-// ── Image upload zone ──────────────────────────────────────────────────────
+// -- Image upload zone --------------------------------------------------------------
 const uploadZone    = document.getElementById("uploadZone");
 const fileInput     = document.getElementById("imageFileInput");
 const previewImg    = document.getElementById("imagePreview");
@@ -644,7 +572,6 @@ uploadZone.addEventListener("click",  e => { if (e.target !== removeBtn) fileInp
 fileInput.addEventListener("change",  ()=> { if (fileInput.files[0]) showPreview(fileInput.files[0]); });
 removeBtn.addEventListener("click",   e => { e.stopPropagation(); clearImage(); });
 
-// Drag & drop
 uploadZone.addEventListener("dragover",  e => { e.preventDefault(); uploadZone.classList.add("drag-over"); });
 uploadZone.addEventListener("dragleave", ()=> uploadZone.classList.remove("drag-over"));
 uploadZone.addEventListener("drop",      e => {
@@ -654,7 +581,7 @@ uploadZone.addEventListener("drop",      e => {
   if (f && f.type.startsWith("image/")) showPreview(f);
 });
 
-// ── ML helpers ─────────────────────────────────────────────────────────────
+// -- ML helpers ---------------------------------------------------------------------
 async function fileToBase64(file) {
   return new Promise((res, rej) => {
     const r = new FileReader();
@@ -664,6 +591,16 @@ async function fileToBase64(file) {
   });
 }
 
+function showMlStatus(msg, type) {
+  const el = document.getElementById("mlStatusMsg");
+  el.textContent = msg;
+  el.className = "ml-status-msg ml-status-" + type;
+  el.style.display = "block";
+}
+function hideMlStatus() {
+  document.getElementById("mlStatusMsg").style.display = "none";
+}
+
 function showAiSuggestion(cat, conf, needsReview) {
   aiSuggestedCat  = cat;
   aiSuggestedConf = conf;
@@ -671,7 +608,7 @@ function showAiSuggestion(cat, conf, needsReview) {
   const catEl = document.getElementById("aiCategoryText");
   const confEl= document.getElementById("aiConfText");
   catEl.textContent  = cat;
-  confEl.textContent = Math.round(conf * 100) + "%" + (needsReview ? " ⚠ low confidence" : "");
+  confEl.textContent = Math.round(conf * 100) + "%" + (needsReview ? " — low confidence" : "");
   box.style.display  = "flex";
 }
 
@@ -679,18 +616,18 @@ function showDetectionBadge(result) {
   const el = document.getElementById("detectionResult");
   if (!result) { el.style.display = "none"; return; }
   if (result.error) {
-    el.innerHTML      = `⚠ Detection unavailable (${result.error})`;
-    el.className      = "detection-badge detection-warn";
+    el.textContent = "Detection unavailable: " + result.error;
+    el.className   = "detection-badge detection-warn";
   } else if (result.has_detection) {
-    let msg = `🔍 ${aiSuggestedCat || "Issue"} detected — ${result.count} instance(s) (${Math.round(result.confidence*100)}% confidence)`;
-    if (result.crack_count) msg += ` + ${result.crack_count} road crack(s)`;
-    el.innerHTML      = msg;
-    el.className      = "detection-badge detection-yes";
+    let msg = `${aiSuggestedCat || "Issue"} detected — ${result.count} instance(s), ${Math.round(result.confidence*100)}% confidence`;
+    if (result.crack_count) msg += `, ${result.crack_count} road crack(s)`;
+    el.textContent = msg;
+    el.className   = "detection-badge detection-yes";
   } else {
-    el.innerHTML      = "✓ No defect automatically detected — complaint still recorded";
-    el.className      = "detection-badge detection-no";
+    el.textContent = "No defect automatically detected — complaint is still recorded";
+    el.className   = "detection-badge detection-no";
   }
-  el.style.display    = "block";
+  el.style.display = "block";
 }
 
 async function runMlAnalysis() {
@@ -700,6 +637,7 @@ async function runMlAnalysis() {
   if (!text) return;
 
   try {
+    showMlStatus("Connecting to AI service (this may take up to 60 seconds on first use)...", "info");
     const payload = { text };
     if (selectedFile) payload.image_base64 = await fileToBase64(selectedFile);
 
@@ -707,10 +645,10 @@ async function runMlAnalysis() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body:   JSON.stringify(payload),
-      signal: AbortSignal.timeout(15000)
+      signal: AbortSignal.timeout(90000)
     });
 
-    if (!resp.ok) throw new Error(`ML service ${resp.status}`);
+    if (!resp.ok) throw new Error(`ML service returned ${resp.status}`);
     const data = await resp.json();
 
     if (data.text_result) {
@@ -722,12 +660,14 @@ async function runMlAnalysis() {
       detectionResult = data.image_result;
       showDetectionBadge(data.image_result);
     }
+    hideMlStatus();
   } catch (err) {
     console.warn("[ML] Service unavailable:", err.message);
+    showMlStatus("AI service is currently unavailable. Your issue will still be submitted.", "warn");
   }
 }
 
-// Apply AI suggestion to dropdown
+// Apply AI suggestion
 document.getElementById("applyAiBtn")?.addEventListener("click", () => {
   if (!aiSuggestedCat) return;
   const sel = document.getElementById("f_category");
@@ -736,7 +676,7 @@ document.getElementById("applyAiBtn")?.addEventListener("click", () => {
   }
 });
 
-// Run ML analysis when user stops typing (debounced)
+// Debounced ML analysis
 let mlDebounce;
 document.getElementById("f_desc")?.addEventListener("input", () => {
   clearTimeout(mlDebounce);
@@ -746,11 +686,11 @@ fileInput?.addEventListener("change", () => {
   if (fileInput.files[0]) setTimeout(runMlAnalysis, 500);
 });
 
-// ── GPS location ───────────────────────────────────────────────────────────
+// -- GPS location -------------------------------------------------------------------
 document.getElementById("gpsBtn")?.addEventListener("click", () => {
   if (!navigator.geolocation) { alert("Geolocation not supported by your browser."); return; }
   const btn = document.getElementById("gpsBtn");
-  btn.textContent = "📡 Locating...";
+  btn.textContent = "Locating...";
   btn.disabled    = true;
   navigator.geolocation.getCurrentPosition(
     async pos => {
@@ -762,18 +702,18 @@ document.getElementById("gpsBtn")?.addEventListener("click", () => {
       } catch (_) {
         document.getElementById("locationInput").value = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
       }
-      btn.textContent = "📡 Use my GPS location";
-      btn.disabled    = false;
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg> Use GPS location';
+      btn.disabled = false;
     },
     err => {
       alert("Could not get location: " + err.message);
-      btn.textContent = "📡 Use my GPS location";
-      btn.disabled    = false;
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg> Use GPS location';
+      btn.disabled = false;
     }
   );
 });
 
-// ── Location autocomplete (Nominatim, free) ─────────────────────────────────
+// -- Location autocomplete ----------------------------------------------------------
 const locInput    = document.getElementById("locationInput");
 const suggestBox  = document.getElementById("suggestions");
 let   locDebounce;
@@ -798,11 +738,11 @@ locInput?.addEventListener("input", () => {
   }, 400);
 });
 
-// ── Form submit ─────────────────────────────────────────────────────────────
+// -- Form submit --------------------------------------------------------------------
 document.getElementById("reportForm")?.addEventListener("submit", async e => {
   e.preventDefault();
 
-  if (!window.firebaseHelpers) { alert("Firebase not loaded yet. Please wait."); return; }
+  if (!window.firebaseHelpers) { alert("Firebase not loaded yet. Please wait a moment."); return; }
 
   const title    = document.getElementById("f_title").value.trim();
   const desc     = document.getElementById("f_desc").value.trim();
@@ -824,9 +764,14 @@ document.getElementById("reportForm")?.addEventListener("submit", async e => {
       imageUrl = await window.firebaseHelpers.uploadImage(selectedFile);
     }
 
+    // Run ML analysis if not already done — but do not block submission
     if (!aiSuggestedCat) {
-      btnText.textContent = "Analysing...";
-      await runMlAnalysis();
+      btnText.textContent = "Running AI analysis...";
+      try {
+        await runMlAnalysis();
+      } catch (_) {
+        // ML is optional — continue with submission
+      }
     }
 
     btnText.textContent = "Saving...";
@@ -844,15 +789,17 @@ document.getElementById("reportForm")?.addEventListener("submit", async e => {
     };
 
     await window.firebaseHelpers.addIssue(issueData);
-    alert("✓ Issue submitted successfully! Thank you for reporting.");
+    alert("Issue submitted successfully. Thank you for reporting.");
 
     e.target.reset();
     clearImage();
     document.getElementById("aiSuggestionBox").style.display = "none";
     document.getElementById("detectionResult").style.display = "none";
+    hideMlStatus();
     aiSuggestedCat = null; aiSuggestedConf = 0; detectionResult = null;
 
-    document.getElementById("issues-section")?.scrollIntoView({ behavior: "smooth" });
+    // Navigate to home to see the issue
+    switchPage("home");
   } catch (err) {
     console.error("Submit error:", err);
     alert("Submission failed: " + err.message);
@@ -864,108 +811,101 @@ document.getElementById("reportForm")?.addEventListener("submit", async e => {
 </script>
 
 <!-- ============================================================
-     NAV + AUTH MODAL + HAMBURGER
+     SIDEBAR NAVIGATION + AUTH MODAL
      ============================================================ -->
 <script>
-window.updateNavUser = function(user) {
-  const nav = document.getElementById("mainNav");
-  if (!nav) return;
-  const ADMIN = ["sarthaksant2004@gmail.com"];
+// -- SPA page switching -------------------------------------------------------------
+function switchPage(pageName) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".sidebar-link[data-page]").forEach(l => l.classList.remove("active"));
+  const target = document.getElementById("page-" + pageName);
+  if (target) target.classList.add("active");
+  const navBtn = document.querySelector(`.sidebar-link[data-page="${pageName}"]`);
+  if (navBtn) navBtn.classList.add("active");
+  // Close mobile sidebar
+  document.getElementById("sidebar")?.classList.remove("open");
+  document.getElementById("hamburgerBtn")?.classList.remove("active");
+  // Scroll to top
+  document.getElementById("mainContent")?.scrollTo(0, 0);
+}
+
+document.querySelectorAll(".sidebar-link[data-page]").forEach(btn => {
+  btn.addEventListener("click", () => switchPage(btn.dataset.page));
+});
+
+// -- Mobile hamburger ---------------------------------------------------------------
+document.getElementById("hamburgerBtn")?.addEventListener("click", () => {
+  document.getElementById("sidebar")?.classList.toggle("open");
+  document.getElementById("hamburgerBtn")?.classList.toggle("active");
+});
+
+// -- Auth ---------------------------------------------------------------------------
+const ADMIN_EMAILS_NAV = ["sarthaksant2004@gmail.com"];
+
+function updateSidebarUser(user) {
+  const userEl   = document.getElementById("sidebar-user");
+  const signinEl = document.getElementById("sidebarSigninBtn");
   if (user?.email) {
-    const isAdmin  = ADMIN.includes(user.email);
     const initials = (user.displayName
       ? user.displayName.split(" ").map(s=>s[0]).join("")
       : user.email.split("@")[0].slice(0,2)).toUpperCase();
-    nav.innerHTML = `
-      <button class="nav-btn" data-target="hero">Home</button>
-      <button class="nav-btn" data-target="how-it-works">How It Works</button>
-      <button class="nav-btn" data-target="issues-section">Issues</button>
-      <button class="nav-btn" data-target="report-section">Report</button>
-      <button class="nav-btn" data-target="help-board-section">Help Board</button>
-      <div class="user-wrap">
-        <button id="userBtn" class="user-btn" title="${user.email}">
-          <span class="user-initials">${initials}</span>
-        </button>
-        <div id="userMenu" class="user-menu hidden">
-          <div class="user-menu-item email">${user.email}
-            ${isAdmin?'<span class="admin-badge">ADMIN</span>':""}</div>
-          <button id="signOutBtn" class="user-menu-item">Sign Out</button>
+    const isAdmin = ADMIN_EMAILS_NAV.includes(user.email);
+    userEl.innerHTML = `
+      <div class="sidebar-user-info">
+        <div class="sidebar-user-avatar">${initials}</div>
+        <div class="sidebar-user-details">
+          <div class="sidebar-user-name">${user.displayName || user.email.split("@")[0]}</div>
+          <div class="sidebar-user-email">${user.email}</div>
+          ${isAdmin ? '<span class="admin-tag">Admin</span>' : ''}
         </div>
       </div>`;
-    document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",navScroll));
-    document.getElementById("userBtn")?.addEventListener("click",()=>
-      document.getElementById("userMenu")?.classList.toggle("hidden"));
-    document.getElementById("signOutBtn")?.addEventListener("click",()=>
-      window.firebaseHelpers?.signOut());
+    signinEl.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      <span>Sign Out</span>`;
+    signinEl.onclick = () => window.firebaseHelpers?.signOut();
   } else {
-    nav.innerHTML = `
-      <button class="nav-btn" data-target="hero">Home</button>
-      <button class="nav-btn" data-target="how-it-works">How It Works</button>
-      <button class="nav-btn" data-target="issues-section">Issues</button>
-      <button class="nav-btn" data-target="report-section">Report</button>
-      <button class="nav-btn" data-target="help-board-section">Help Board</button>
-      <button class="btn-signin" id="signinBtn">Sign In</button>`;
-    document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",navScroll));
-    document.getElementById("signinBtn")?.addEventListener("click",openAuth);
+    userEl.innerHTML = "";
+    signinEl.innerHTML = `
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+      <span>Sign In</span>`;
+    signinEl.onclick = openAuth;
   }
-};
-
-function navScroll(e) {
-  const id = e.currentTarget.dataset.target;
-  document.getElementById(id)?.scrollIntoView({ behavior:"smooth", block:"start" });
-  // Close hamburger on mobile
-  document.getElementById("mainNav")?.classList.remove("nav-open");
-  document.getElementById("hamburgerBtn")?.classList.remove("active");
 }
+
 function openAuth() { document.getElementById("authModal")?.classList.add("active"); }
 function closeAuth(){ document.getElementById("authModal")?.classList.remove("active"); }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Hamburger toggle
-  document.getElementById("hamburgerBtn")?.addEventListener("click", () => {
-    document.getElementById("mainNav")?.classList.toggle("nav-open");
-    document.getElementById("hamburgerBtn")?.classList.toggle("active");
-  });
-
-  document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",navScroll));
-  document.getElementById("signinBtn")?.addEventListener("click",openAuth);
-
-  // Auth modal
+  // Build auth modal
   if (!document.getElementById("authModal")) {
     document.body.insertAdjacentHTML("beforeend", `
       <div id="authModal" class="auth-modal">
         <div class="auth-modal-card">
           <button class="auth-close" id="authClose">&times;</button>
-          <div class="auth-grid">
-            <div class="auth-left">
-              <h3>Welcome to CivicTrack</h3>
-              <p>Sign in to report issues, track your reports and engage with your community.</p>
-              <div class="oauth-row">
-                <button id="googleSignIn" class="btn-google">
-                  <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-                  Sign in with Google
-                </button>
-              </div>
-              <div class="or-sep"><span>OR</span></div>
-            </div>
-            <div class="auth-right">
-              <div class="tab-row">
-                <button id="tabSI" class="tab active">Sign In</button>
-                <button id="tabSU" class="tab">Sign Up</button>
-              </div>
-              <form id="frmSI" class="auth-form">
-                <label>Email</label><input type="email" id="si_email" required />
-                <label>Password</label><input type="password" id="si_pass" required />
-                <button type="submit" class="btn-primary">Sign In</button>
-              </form>
-              <form id="frmSU" class="auth-form hidden">
-                <label>Full name</label><input type="text" id="su_name" required />
-                <label>Email</label><input type="email" id="su_email" required />
-                <label>Password</label><input type="password" id="su_pass" required />
-                <button type="submit" class="btn-primary">Create Account</button>
-              </form>
-            </div>
+          <h3>Sign In to CivicTrack</h3>
+          <p class="auth-subtitle">Sign in to report issues and track progress.</p>
+          <div class="oauth-row">
+            <button id="googleSignIn" class="btn-google">
+              <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+              Continue with Google
+            </button>
           </div>
+          <div class="or-sep"><span>or</span></div>
+          <div class="tab-row">
+            <button id="tabSI" class="tab active">Sign In</button>
+            <button id="tabSU" class="tab">Sign Up</button>
+          </div>
+          <form id="frmSI" class="auth-form">
+            <label>Email</label><input type="email" id="si_email" required />
+            <label>Password</label><input type="password" id="si_pass" required />
+            <button type="submit" class="btn-primary">Sign In</button>
+          </form>
+          <form id="frmSU" class="auth-form hidden">
+            <label>Full name</label><input type="text" id="su_name" required />
+            <label>Email</label><input type="email" id="su_email" required />
+            <label>Password</label><input type="password" id="su_pass" required />
+            <button type="submit" class="btn-primary">Create Account</button>
+          </form>
         </div>
       </div>`);
 
@@ -991,7 +931,7 @@ document.addEventListener("DOMContentLoaded", () => {
       catch(err){ alert("Sign up failed: "+err.message); } };
   }
 
-  window.firebaseHelpers?.onAuthStateChanged?.(u => window.updateNavUser?.(u));
+  window.firebaseHelpers?.onAuthStateChanged?.(u => updateSidebarUser(u));
 });
 </script>
 
