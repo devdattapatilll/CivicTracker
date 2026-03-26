@@ -3,7 +3,7 @@ train_nlp.py
 ------------
 Trains a TF-IDF + LinearSVC text classifier for CivicTrack.
 
-Run locally or in Google Colab:
+Run locally, in Google Colab, or on any machine with Python 3.8+:
   python train_nlp.py
 
 Output: models/classifier.pkl
