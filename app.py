@@ -196,7 +196,7 @@ def classify_text():
     })
 
 
-# ── Image detection (single category) ────────────────────────────────────────
+# ── Single-category image detection ────────────────────────────────────────
 @app.route("/detect", methods=["POST"])
 def detect():
     """
