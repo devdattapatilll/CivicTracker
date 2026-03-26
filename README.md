@@ -32,6 +32,15 @@
 
 ---
 
+## Architecture Overview
+
+The platform follows a client-server architecture:
+- **Frontend** (Vercel) → static HTML/CSS/JS with React components
+- **ML Backend** (Render) → Flask REST API with YOLO + NLP models
+- **Database** (Firebase) → Firestore for issues, Authentication for users
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
