@@ -173,6 +173,22 @@ a:hover { text-decoration: underline; }
 .page-header h2 { margin-bottom: .4rem; }
 .page-subtitle { color: var(--gray-500); font-size: .95rem; }
 
+/* Report CTA on dashboard */
+.report-cta-btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  margin-top: 1.25rem; padding: .7rem 1.6rem;
+  background: linear-gradient(135deg, var(--teal-600), var(--teal-700));
+  color: #fff; border: none; border-radius: var(--radius);
+  font-size: .95rem; font-weight: 600; font-family: var(--font);
+  cursor: pointer; transition: transform .15s, box-shadow .15s;
+  box-shadow: 0 2px 8px rgba(13,148,136,.3);
+}
+.report-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(13,148,136,.4);
+}
+.report-cta-btn svg { flex-shrink: 0; }
+
 .section-title {
   font-size: 1.1rem; font-weight: 600; color: var(--gray-700);
   margin-bottom: 1rem;
