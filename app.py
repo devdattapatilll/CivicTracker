@@ -167,7 +167,7 @@ def health():
     return jsonify({"status": "ok", "models_present": loaded})
 
 
-# ── Text classification ──────────────────────────────────────────────────────
+# ── NLP text classification ──────────────────────────────────────────────────────
 @app.route("/classify-text", methods=["POST"])
 def classify_text():
     """
