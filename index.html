@@ -177,7 +177,7 @@
           <div class="step-number">2</div>
           <div class="step-content">
             <h4>AI Analysis</h4>
-            <p>YOLO object detection models scan the uploaded image for potholes, garbage, waterlogging, or road cracks. A separate NLP classifier categorizes the text description.</p>
+            <p>Three YOLO object detection models scan the uploaded image for potholes, garbage, or road cracks. The system automatically determines the issue category from the image. A separate NLP classifier categorizes text descriptions.</p>
           </div>
         </div>
         <div class="workflow-connector"></div>
@@ -214,7 +214,7 @@
           <h4>ML Backend</h4>
           <p class="arch-tech">Render (Python / Flask)</p>
           <ul class="arch-list">
-            <li>4 YOLO object detection models</li>
+            <li>3 YOLO object detection models</li>
             <li>TF-IDF + LinearSVC text classifier</li>
             <li>REST API with 6 endpoints</li>
             <li>Gunicorn production server</li>
@@ -249,11 +249,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>pothole.pt</td><td>YOLOv12s</td><td>Pothole and road damage detection</td><td>Image</td></tr>
-            <tr><td>garbage.pt</td><td>YOLOv8n</td><td>Waste and overflowing bin detection</td><td>Image</td></tr>
-            <tr><td>waterlog.pt</td><td>YOLOv8n</td><td>Flood and waterlogging detection</td><td>Image</td></tr>
-            <tr><td>crack.pt</td><td>YOLOv8n</td><td>Road crack and surface damage detection</td><td>Image</td></tr>
-            <tr><td>classifier.pkl</td><td>TF-IDF + LinearSVC</td><td>Text classification into 5 categories</td><td>Text</td></tr>
+            <tr><td>pothole.pt</td><td>YOLO</td><td>Pothole and road damage detection</td><td>Image</td></tr>
+            <tr><td>garbage.pt</td><td>YOLO</td><td>Waste and overflowing bin detection</td><td>Image</td></tr>
+            <tr><td>crack.pt</td><td>YOLO</td><td>Road crack and surface damage detection</td><td>Image</td></tr>
+            <tr><td>classifier.pkl</td><td>TF-IDF + LinearSVC</td><td>Text classification into 3 categories + Other</td><td>Text</td></tr>
           </tbody>
         </table>
       </div>
