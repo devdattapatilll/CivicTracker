@@ -29,7 +29,7 @@ log = logging.getLogger("civictrack")
 # ── Flask app ─────────────────────────────────────────────────────────────────
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024   # 16 MB max payload
-CORS(app)  # Allow requests from Vercel frontend
+CORS(app)  # Allow cross-origin requests from Vercel frontend
 
 # ── Model paths (override via env vars on Render dashboard) ───────────────────
 MODEL_PATHS = {
