@@ -88,8 +88,8 @@
 
       <!-- Description -->
       <div class="form-group">
-        <label class="form-label">Description <span class="required">*</span></label>
-        <textarea id="f_desc" name="description" class="form-textarea" required minlength="20"
+        <label class="form-label">Description <span class="form-hint">(optional)</span></label>
+        <textarea id="f_desc" name="description" class="form-textarea"
                   placeholder="Describe the issue in detail — location, severity, how long it has been present..."></textarea>
       </div>
 
@@ -105,18 +105,16 @@
         <select id="f_category" name="category" class="form-select">
           <option value="Roads">Roads (Potholes)</option>
           <option value="Garbage">Garbage</option>
-          <option value="Water Leakage">Water Leakage / Flooding</option>
           <option value="Road Cracks">Road Cracks</option>
-          <option value="Electricity">Electricity</option>
           <option value="Other">Other</option>
         </select>
       </div>
 
       <!-- Location -->
       <div class="form-group">
-        <label class="form-label">Location <span class="required">*</span></label>
+        <label class="form-label">Location <span class="form-hint">(optional)</span></label>
         <input id="locationInput" name="location" type="text" class="form-input"
-               placeholder="Search location or use GPS..." required>
+               placeholder="Search location or use GPS...">
         <div id="suggestions" class="suggestions-box"></div>
         <button type="button" id="gpsBtn" class="gps-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
