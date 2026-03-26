@@ -1,3 +1,6 @@
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://devdatta-civictrack.vercel.app)
+[![Backend](https://img.shields.io/badge/API-Render-blue)](https://civictrack-ml.onrender.com/health)
+
 # CivicTrack — AI-Powered Community Issue Tracker
 
 > Report civic issues like potholes, garbage, and road cracks. AI automatically detects and categorizes them from images and text.
