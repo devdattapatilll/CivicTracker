@@ -180,3 +180,11 @@ python training/train_nlp.py
 ## License
 
 Capstone Project — © 2025–2026 CivicTrack
+
+
+## Acknowledgments
+
+- [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) for object detection framework
+- [scikit-learn](https://scikit-learn.org/) for NLP classification pipeline
+- [Firebase](https://firebase.google.com/) for authentication and database
+- [OpenStreetMap/Nominatim](https://nominatim.openstreetmap.org/) for geocoding
