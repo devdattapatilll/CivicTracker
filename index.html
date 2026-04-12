@@ -92,14 +92,16 @@
       <div class="form-group">
         <label class="form-label">Issue Title <span class="required">*</span></label>
         <input id="f_title" name="title" type="text" class="form-input"
-               placeholder="e.g. Large pothole near market road" required minlength="5">
+               placeholder="e.g. Large pothole near market road" required minlength="5"
+               aria-label="Issue title" aria-required="true">
       </div>
 
       <!-- Description -->
       <div class="form-group">
         <label class="form-label">Description <span class="form-hint">(optional)</span></label>
         <textarea id="f_desc" name="description" class="form-textarea"
-                  placeholder="Describe the issue in detail — location, severity, how long it has been present..."></textarea>
+                  placeholder="Describe the issue in detail — location, severity, how long it has been present..."
+                  aria-label="Issue description"></textarea>
       </div>
 
       <!-- Category -->
@@ -111,7 +113,7 @@
             <span id="aiConfText"></span></span>
           <button type="button" id="applyAiBtn" class="apply-ai-btn">Apply</button>
         </div>
-        <select id="f_category" name="category" class="form-select">
+        <select id="f_category" name="category" class="form-select" aria-label="Issue category">
           <option value="Roads">Roads (Potholes)</option>
           <option value="Garbage">Garbage</option>
           <option value="Road Cracks">Road Cracks</option>
@@ -123,7 +125,7 @@
       <div class="form-group">
         <label class="form-label">Location <span class="form-hint">(optional)</span></label>
         <input id="locationInput" name="location" type="text" class="form-input"
-               placeholder="Search location or use GPS...">
+               placeholder="Search location or use GPS..." aria-label="Location">
         <div id="suggestions" class="suggestions-box"></div>
         <button type="button" id="gpsBtn" class="gps-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
