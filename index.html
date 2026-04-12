@@ -587,6 +587,9 @@
 // -- Config -------------------------------------------------------------------------
 const ML_SERVICE_URL = "https://civictrack-ml.onrender.com";
 
+// Pre-wake the ML service (Render free tier sleeps after 15 min)
+fetch(`${ML_SERVICE_URL}/health`).catch(() => {});
+
 // -- State --------------------------------------------------------------------------
 let selectedFile       = null;
 let aiSuggestedCat     = null;
