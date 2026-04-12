@@ -162,17 +162,6 @@ python training/train_nlp.py
 
 ---
 
-## Team
-
-| Name | Role |
-|---|---|
-| Sarthak Sant | Backend Developer, UI/UX Design |
-| Mayank Rawat | Authentication and Admin Module |
-| Rizul Pathania | Frontend Developer |
-| Devdatta Patil | ML Models and Deployment |
-
----
-
 ## Contributing
 
 1. Fork the repository
