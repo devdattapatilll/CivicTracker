@@ -1,5 +1,5 @@
 """
-COLAB TRAINING GUIDE — CivicTrack 4-Model YOLO + NLP Training
+COLAB TRAINING GUIDE — CivicTrack 3-Model YOLO + NLP Training
 ================================================================
 Run this in Google Colab with free T4 GPU:
   Runtime → Change runtime type → T4 GPU

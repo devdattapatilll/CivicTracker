@@ -1,7 +1,7 @@
 """
-train_yolo_local.py
--------------------
-Downloads free public datasets and trains all 4 YOLO models locally.
+train_yolo.py
+-------------
+Downloads free public datasets and trains all 3 YOLO models locally.
 Uses minimal epochs on CPU — retrain in Colab with more epochs for production.
 """
 import os, sys, shutil
