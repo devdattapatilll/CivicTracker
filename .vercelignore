@@ -1,3 +1,4 @@
+# Exclude backend/ML files from Vercel static deployment
 .venv
 .vscode
 node_modules
@@ -13,15 +14,13 @@ dist
 build
 .git
 .github
-.vscode
-.venv
-__pycache__
+.gemini
 training/
 runs/
 datasets/
-test_backend.py
 Procfile
 requirements.txt
 app.py
 models/*.pt
 models/*.pkl
+docs/
